@@ -28,6 +28,7 @@
   </parent>
 
   <artifactId>avro-compiler</artifactId>
+  <version>1.9.1-SNAPSHOT</version>
 
   <name>Apache Avro Compiler</name>
   <packaging>bundle</packaging>
@@ -37,13 +38,13 @@
   <properties>
     <osgi.import>
       !org.apache.avro.compiler*,
-      org.apache.avro*;version="${project.version}",
+      org.apache.avro*;version="${project.parent.version}",
       org.apache.commons.lang*,
       org.apache.commons.velocity*,
       org.apache.ant*,
       *
     </osgi.import>
-    <osgi.export>org.apache.avro.compiler*;version="${project.version}"</osgi.export>
+    <osgi.export>org.apache.avro.compiler*;version="${project.parent.version}"</osgi.export>
   </properties>
 
   <build>
@@ -93,12 +94,12 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>avro</artifactId>
-      <version>${project.version}</version>
+      <version>${project.parent.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>avro</artifactId>
-      <version>${project.version}</version>
+      <version>${project.parent.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
