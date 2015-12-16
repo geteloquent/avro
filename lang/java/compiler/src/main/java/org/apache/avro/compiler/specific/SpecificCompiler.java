@@ -347,6 +347,10 @@ public class SpecificCompiler {
     VelocityContext context = new VelocityContext();
     context.put("protocol", protocol);
     context.put("this", this);
+    for(Object velocityTool : additionalVelocityTools) {
+      String toolName = velocityTool.getClass().getSimpleName().toLowerCase();
+      context.put(toolName, velocityTool);
+    }
     String out = renderTemplate(templateDir+"protocol.vm", context);
 
     OutputFile outputFile = new OutputFile();
